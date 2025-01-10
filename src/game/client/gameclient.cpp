@@ -516,23 +516,27 @@ int CGameClient::OnSnapInput(int *pData, bool Dummy, bool Force)
 	}
 	else
 	{
+		vec2 MainPos = m_LocalCharacterPos;
+		vec2 DummyPos = m_aClients[m_aLocalIds[!g_Config.m_ClDummy]].m_Predicted.m_Pos;
+		vec2 Dir = MainPos - DummyPos;
+
+	if((distance(DummyPos, MainPos) < 64 && g_Config.m_FlPseudoHelper) || (!g_Config.m_FlPseudoHelper)) {
 		if(m_DummyFire % 25 != 0)
 		{
 			m_DummyFire++;
 			return 0;
 		}
+
 		m_DummyFire++;
 
 		m_HammerInput.m_Fire = (m_HammerInput.m_Fire + 1) | 1;
+	}
 		m_HammerInput.m_WantedWeapon = WEAPON_HAMMER + 1;
 		if(!g_Config.m_ClDummyRestoreWeapon)
 		{
 			m_DummyInput.m_WantedWeapon = WEAPON_HAMMER + 1;
 		}
-
-		vec2 MainPos = m_LocalCharacterPos;
-		vec2 DummyPos = m_aClients[m_aLocalIds[!g_Config.m_ClDummy]].m_Predicted.m_Pos;
-		vec2 Dir = MainPos - DummyPos;
+	
 		m_HammerInput.m_TargetX = (int)(Dir.x);
 		m_HammerInput.m_TargetY = (int)(Dir.y);
 

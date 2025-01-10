@@ -10,6 +10,9 @@
 #define MACRO_CONFIG_STR(Name, ScriptName, Len, Def, Save, Desc) ;
 #endif
 
+// fly-client
+MACRO_CONFIG_INT(FlPseudoHelper, fl_pseudo_helper, 0, 0, 1, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Pseudo helper, your dummy hammer only when distance < 2.")
+
 // client
 MACRO_CONFIG_INT(ClPredict, cl_predict, 1, 0, 1, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Predict client movements")
 MACRO_CONFIG_INT(ClPredictDummy, cl_predict_dummy, 1, 0, 1, CFGFLAG_CLIENT | CFGFLAG_SAVE, "Predict dummy movements")
