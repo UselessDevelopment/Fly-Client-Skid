@@ -5,6 +5,9 @@ Fly-client is DDBased client, which have only 1 usefull fuction , and moreover p
 
 [Repo with pre-compiled Fly-Client](https://github.com/Cloud-dot/Fly-client-ddnet) (Not recommended for use)
 
+# Download
+Download skid of Fly-Client from [GitHub Actions](https://github.com/UselessDevelopment/Fly-Client-Skid/actions/runs/12714647483) or compile it with yourself.
+
 # Compilation
 ```
     mkdir build
